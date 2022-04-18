@@ -1,0 +1,12 @@
+version: '3'
+services:
+  tileserver:
+    image: maptiler/tileserver-gl
+    command: --port 80 --config /config/config.json --verbose
+    volumes:
+    - ./data:/data
+    - ./config:/config
+    restart: unless-stopped
+networks:
+  default:
+    name: trufi-server

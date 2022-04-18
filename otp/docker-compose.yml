@@ -1,0 +1,12 @@
+version: '3'
+services:
+  otp:
+    build:
+      context: ./$otpversion
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+    - ./data:/app/graphs
+networks:
+  default:
+    name: trufi-server

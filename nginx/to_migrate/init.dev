@@ -1,0 +1,11 @@
+#!/bin/sh
+[ -d "./data" ] || mkdir "./data"
+
+if ! [ -f "./data/nginx/app.dev.conf" ]; then
+	[ -d "./data/nginx" ] || mkdir "./data/nginx"
+	cp ./config/templates/app.dev.conf ./data/nginx/app.dev.conf
+	echo "nginx config created"
+fi
+
+echo "dev enviroment set up"
+exit 0

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  static-maps:
+    image: nginx:1.15-alpine
+    volumes:
+    - ./nginx:/etc/nginx/conf.d
+    - ./data:/var/www/maps
+    restart: unless-stopped
+networks:
+  default:
+    name: trufi-server
