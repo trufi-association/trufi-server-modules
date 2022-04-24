@@ -1,4 +1,4 @@
-# Extension `tileserver`
+# Module `tileserver`
 
 |                                        |                                                              |
 | -------------------------------------- | ------------------------------------------------------------ |
@@ -6,7 +6,7 @@
 
 ## Description
 
-This extension is using [Tileserver-GL](https://github.com/maptiler/tileserver-gl) from [Maptiler](https://www.maptiler.com/). It generates png tiles dynamically by request and lets client also download the styles and data by themselves for client side rendering which is the future due to individualization efforts of world wide society and economy. <u>If you use clients that cannot render client side like apps build using the Trufi Core or Flutter in general then this service will be consuming more resources server side because it renders tiles per request.</u>
+This module is using [Tileserver-GL](https://github.com/maptiler/tileserver-gl) from [Maptiler](https://www.maptiler.com/). It generates png tiles dynamically by request and lets client also download the styles and data by themselves for client side rendering which is the future due to individualization efforts of world wide society and economy. <u>If you use clients that cannot render client side like apps build using the Trufi Core or Flutter in general then this service will be consuming more resources server side because it renders tiles per request.</u>
 
 For servers with less CPU power e.g. cheap servers. we recommend using the alternative [static_maps](../static_maps)
 
