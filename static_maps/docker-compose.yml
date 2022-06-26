@@ -5,6 +5,11 @@ services:
     volumes:
     - ./nginx:/etc/nginx/conf.d
     - ./data:/var/www/maps # the name of the folder on the host needs to have the name 'data' and it should contain the files you want to persist between docker container builds. This makes it easier to add (updated) data generated with https://github.com/trufi-association/trufi-server-resources
+    healthcheck:
+        test: "wget -q -T 1 http://localhost/health -O /dev/null"
+        interval: 5s
+        timeout: 2s
+        retries: 20
     restart: unless-stopped
 networks: # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
   default:
