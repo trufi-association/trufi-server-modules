@@ -7,6 +7,12 @@ services:
     restart: unless-stopped
     volumes:
     - ./data:/app/graphs # the name of the folder on the host needs to have the name 'data' and it should contain the files you want to persist between docker container builds. This makes it easier to add (updated) data generated with https://github.com/trufi-association/trufi-server-resources
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/otp/routers/default"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 networks: # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
   default:
     name: trufi-server
