@@ -32,3 +32,7 @@ You can find all in the [root](.) folder. Each module has a README file with mor
   This service serves as a reverse proxy which stands in the middle between the client and the modules. It hides most resources modules expose through their HTTP endpoints and only allows access to tose actually needed by clients. This is achieved by a `nginx.conf` each module has. NGINX also handles the SSL encryption stuff for the modules so not each single module need to do that by itself. The use of this module is **mandatory** in production environments.
 
 Concerning background map tiles: Decide wethever you want to use the module *static_maps* or *tileserver*. Using both is useless.
+
+### Add additional modules
+
+You are open to use more modules than those provided here as this structure works for all modules compatible to our conventions. Across our repos you can find additional modules to clone into here. These have a `tsm-` prefix. Download them by doing a clone into this directory. They should have a README telling you how to use them.

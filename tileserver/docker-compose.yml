@@ -1,12 +1,12 @@
 version: '3'
 services:
-  tileserver:
+  tileserver: # should be equal to the name of the folder name this compose is in
     image: maptiler/tileserver-gl
     command: --port 80 --config /config/config.json --verbose
     volumes:
-    - ./data:/data
+    - ./data:/data # the name of the folder on the host needs to have the name 'data' and it should contain the files you want to persist between docker container builds. This makes it easier to add (updated) data generated with https://github.com/trufi-association/trufi-server-resources
     - ./config:/config
     restart: unless-stopped
-networks:
+networks: # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
   default:
     name: trufi-server

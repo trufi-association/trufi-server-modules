@@ -1,11 +1,11 @@
 version: '3'
 services:
-  static-maps:
+  static-maps: # should be equal to the name of the folder name this compose is in
     image: nginx:1.15-alpine
     volumes:
     - ./nginx:/etc/nginx/conf.d
-    - ./data:/var/www/maps
+    - ./data:/var/www/maps # the name of the folder on the host needs to have the name 'data' and it should contain the files you want to persist between docker container builds. This makes it easier to add (updated) data generated with https://github.com/trufi-association/trufi-server-resources
     restart: unless-stopped
-networks:
+networks: # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
   default:
     name: trufi-server

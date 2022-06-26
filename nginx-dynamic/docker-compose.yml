@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nginx:
+  nginx: # should be equal to the name of the folder name this compose is in
     image: nginx
     ports:
     - 80:80
@@ -8,6 +8,7 @@ services:
     volumes:
     - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./config/js:/etc/nginx/inc/js:ro
+    # the name of the folder on the host needs to have the name 'data' and it should contain the files you want to persist between docker container builds.
     - ./data/nginx:/etc/nginx/conf.d:ro
     - ./data/logs/nginx:/var/log/nginx/:ro
     - ./data/certbot/conf:/etc/letsencrypt:ro
@@ -16,6 +17,6 @@ services:
     command: /bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done
       & nginx -g "daemon off;"'
     restart: unless-stopped
-networks:
+networks: # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
   default:
     name: trufi-server

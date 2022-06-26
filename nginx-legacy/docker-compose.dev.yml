@@ -1,12 +1,12 @@
 version: '3'
 services:
-  nginx:
+  nginx: # should be equal to the name of the folder name this compose is in
     image: nginx:1.15-alpine
     volumes:
     - ./dev/:/etc/nginx/conf.d
     ports:
     - 8080:80
     restart: unless-stopped
-networks:
+networks: # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
   default:
     name: trufi-server
