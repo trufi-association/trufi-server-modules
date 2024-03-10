@@ -2,7 +2,7 @@ version: '3'
 services:
   photon: # should be equal to the name of the folder name this compose is in
     build:
-      context: ./0.3.5
+      context: ./0.5.0
       dockerfile: ./Dockerfile
     restart: unless-stopped
     volumes:
