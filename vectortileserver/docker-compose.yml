@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  vectortileserver:
+    image: consbio/mbtileserver
+    command: "--enable-reload-signal"
+    #ports:
+    #    - 8080:8080
+    volumes:
+      - "../tileserver/data:/tilesets"
+    environment:
+      PORT: 8080
+      TILE_DIR: "/tilesets"
+      ROOT_URL: "/vector-tiles"
+    restart: unless-stopped
+
+networks:
+  # this needs to be added as we spin off a default network 'trufi-server' to connect this module to the reverse proxy nginx
+  default:
+    name: trufi-server
