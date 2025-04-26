@@ -9,3 +9,4 @@ letsencrypt/data/
 *.pbf
 *.zip
 .enable
+.vscode
