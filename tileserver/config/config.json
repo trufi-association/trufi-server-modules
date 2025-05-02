@@ -2,7 +2,7 @@
   "options": {
     "paths": {
       "root": "",
-      "fonts": "/app/node_modules/tileserver-gl-styles/fonts",
+      "fonts": "/usr/src/app/node_modules/tileserver-gl-styles/fonts",
       "styles": "/config/styles",
       "mbtiles": "/data"
     }
@@ -20,8 +20,8 @@
       }
     },
     "trufi-dark": {
-	  "style": "trufi_dark.json",
-	  "tilejson": {
+      "style": "trufi_dark.json",
+      "tilejson": {
         "bounds": [
           9.613465,
           53.38581,
@@ -37,4 +37,3 @@
     }
   }
 }
- 

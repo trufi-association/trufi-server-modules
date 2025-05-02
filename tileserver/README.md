@@ -1,7 +1,7 @@
 # Module `tileserver`
 
-|                                        |                                                              |
-| -------------------------------------- | ------------------------------------------------------------ |
+|                                        |                                                                                                          |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | This depends on the following builders | [mbtiles-builder](https://github.com/trufi-association/trufi-server-resources/tree/main/mbtiles-builder) |
 
 ## Description
@@ -32,10 +32,16 @@ If you want a bounding box in order to debug properly then perform the following
 
 #### Option B: Without defining a bounding box
 
-In the `config.json`  remove all occurrence of key `tilejson` and its values otherwise you render your instance of OpenMapTiles unusuable.
+In the `config.json` remove all occurrence of key `tilejson` and its values otherwise you render your instance of OpenMapTiles unusuable.
 
-### Test the configuration
+## Build container
 
-Do `sudo docker-compose start tileserver` and head over to your webbrowser to type in the ip/url of your server and open a HTTP connection on port `8002` e.g. `http://example.com/tileserver:8002` or `http://localhost:8002`.
+```bash
+sudo docker-compose -f docker-compose.yml up --build
+```
 
-Watch out if you can click on "inspect" and then you should see a map of your chosen region.
+### Start tileserver
+
+```bash
+sudo docker-compose -f docker-compose.yml up --detach
+```
