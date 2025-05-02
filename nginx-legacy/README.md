@@ -14,7 +14,7 @@ For production where internet HTTP(S) traffic directly terminates here, you need
 
 Both init scripts create a folder. `init.dev` creates a `dev` folder and `init.prod` creates a `data` folder. Inside that folder there is a file `app.conf` or `nginx/app.conf`.
 
-These file contain a `# extensions` stanca. Below that you need to insert the contents of `nginx.conf` file in each of the modules' folder you use.
+These file contain a `# extensions` stanza. Below that you need to insert the contents of the `nginx.conf.dev` or `nginx.conf.prod` file in each of the modules' folder you use. If these are not existing, then `nginx.conf` should do the trick.
 
 ## Starting
 

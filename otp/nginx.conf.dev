@@ -1,0 +1,7 @@
+	location /otp {
+		return 301 /otp/;
+	}
+	
+	location /otp/ {
+		proxy_pass http://otp:8080;
+	}
