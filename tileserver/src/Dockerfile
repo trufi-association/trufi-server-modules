@@ -1,4 +1,4 @@
-FROM maptiler/tileserver-gl:5.3.0
+FROM maptiler/tileserver-gl:v5.3.0
 
 USER root:root
 
